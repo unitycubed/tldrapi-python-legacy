@@ -61,7 +61,9 @@ result = client.summarize(long_text, tier="deep")
 ```
 
 Available tiers: `quick`, `standard`, `deep`, `premium`, `ultra`, or
-any of the 25 compound presets like `"thorough-standard"`.
+any of the 25 compound presets like `"thorough-standard"`. Full
+pricing detail (methodology, formula, dynamic-pricing audit trail):
+[tldrapi.com/pricing](https://tldrapi.com/pricing).
 
 ### Summarize an article by URL
 
