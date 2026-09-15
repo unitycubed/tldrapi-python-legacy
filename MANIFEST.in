@@ -1,0 +1,2 @@
+include README.md LICENSE setup.py
+recursive-include tldrapi_legacy *.py
