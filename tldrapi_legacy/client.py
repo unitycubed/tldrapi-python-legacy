@@ -31,7 +31,7 @@ DEFAULT_HOST = "tldrapi-summarizer.p.rapidapi.com"
 DEFAULT_TIMEOUT = 60.0
 DEFAULT_RETRIES = 3
 
-VALID_TIERS = ("quick", "standard", "deep", "premium", "ultra")
+VALID_TIERS = ("quick", "standard", "deep", "premium", "max")
 
 
 class SummarizeResult(object):
@@ -72,7 +72,7 @@ class UsageStats(object):
 
 
 class Rates(object):
-    __slots__ = ("raw", "quick", "standard", "deep", "premium", "ultra")
+    __slots__ = ("raw", "quick", "standard", "deep", "premium", "max")
 
     def __init__(self, raw):
         self.raw = raw
@@ -86,7 +86,7 @@ class Rates(object):
         self.standard = by_name.get("standard")
         self.deep = by_name.get("deep")
         self.premium = by_name.get("premium")
-        self.ultra = by_name.get("ultra")
+        self.max = by_name.get("max")
 
 
 class TLDRapi(object):
@@ -123,12 +123,12 @@ class TLDRapi(object):
         Args:
           input_text: str or URL — the content to summarize
           tier: one of the 30 named presets (quick/standard/deep/premium/
-            ultra, or a compound like 'thorough-standard'); None → server default
+            max, or a compound like 'thorough-standard'); None → server default
           session_id: pin to a previous SummarizeResult.session_id
           model_alias: force a specific model (rarely needed)
           allow_overage: pay 2x rate rather than 402 when balance is low
           allow_downgrade: opt-in permissive paid-tier fallback
-          optional_quality: LLM axis override (quick/standard/deep/premium/ultra)
+          optional_quality: LLM axis override (quick/standard/deep/premium/max)
           optional_extractive_lvl: retention axis
             (minimal/brief/balanced/thorough/detailed/complete)
           optional_strategy: inference strategy

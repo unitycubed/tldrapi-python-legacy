@@ -60,7 +60,7 @@ print("credits remaining: %s" % result.credits.get("remaining"))
 result = client.summarize(long_text, tier="deep")
 ```
 
-Available tiers: `quick`, `standard`, `deep`, `premium`, `ultra`, or
+Available tiers: `quick`, `standard`, `deep`, `premium`, `max`, or
 any of the 25 compound presets like `"thorough-standard"`. Full
 pricing detail (methodology, formula, dynamic-pricing audit trail):
 [tldrapi.com/pricing](https://tldrapi.com/pricing).
@@ -119,7 +119,7 @@ r = client.summarize(text, tier="premium",
 
 # all three axes, no preset
 r = client.summarize(text,
-                     optional_quality="ultra",
+                     optional_quality="max",
                      optional_extractive_lvl="complete",
                      optional_strategy="premium-single-shot")
 
